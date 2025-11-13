@@ -13,7 +13,7 @@ function login() {
 }
 
 // Jika halaman login dan sudah login → arahkan ke analisis
-if (window.location.pathname.includes("login.html") && localStorage.getItem("userLogin")) {
+if (window.location.pathname.includes("index.html") && localStorage.getItem("userLogin")) {
   window.location.href = "analisis.html";
 }
 
@@ -21,7 +21,7 @@ if (window.location.pathname.includes("login.html") && localStorage.getItem("use
 if (window.location.pathname.includes("analisis.html")) {
   let user = localStorage.getItem("userLogin");
   if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
   } else {
     document.getElementById("user").textContent = "Halo, " + user + " 👋";
   }
@@ -29,7 +29,7 @@ if (window.location.pathname.includes("analisis.html")) {
 
 function logout() {
   localStorage.removeItem("userLogin");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
 // ===== LOGIKA ANALISIS + POPUP =====
@@ -78,3 +78,4 @@ function analisisKedatangan() {
 function tutupPopup() {
   document.getElementById("popup").classList.add("hidden");
 }
+
