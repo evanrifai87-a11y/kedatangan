@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analisis Kedatangan Siswa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <video autoplay muted loop id="bgVideo">
+    <source src="" type="video/mp4">
+  </video>
+
+  <div class="bg-white/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl text-center w-96 fade-in">
+    <h1 class="text-2xl font-bold text-indigo-700 mb-2">🏫 Analisis Kedatangan Siswa</h1>
+    <p id="user" class="text-gray-600 mb-4"></p>
+
+    <input id="namaSiswa" type="text" placeholder="Masukkan Nama Siswa"
+           autocomplete="off"
+           class="border border-gray-300 rounded-lg px-3 py-2 w-full mb-3 text-center focus:outline-none focus:ring-2 focus:ring-indigo-400">
+
+    <input id="kelas" type="text" placeholder="Masukkan Kelas (misal: XII RPL 1)"
+           autocomplete="off"
+           class="border border-gray-300 rounded-lg px-3 py-2 w-full mb-3 text-center focus:outline-none focus:ring-2 focus:ring-indigo-400">
+
+    <input id="jamDatang" type="text" placeholder="Masukkan Jam Datang (misal: 06.40)"
+           autocomplete="off"
+           class="border border-gray-300 rounded-lg px-3 py-2 w-full text-center focus:outline-none focus:ring-2 focus:ring-indigo-400">
+
+    <button onclick="analisisKedatangan()"
+            class="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg w-full transition-transform hover:scale-105">
+      Analisis Sekarang
+    </button>
+
+    <div id="popup" class="popup hidden">
+      <div class="popup-content">
+        <p id="hasil" class="text-lg font-semibold"></p>
+        <button onclick="tutupPopup()" class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">
+          Oke
+        </button>
+      </div>
+    </div>
+
+    <button onclick="logout()"
+            class="mt-6 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg w-full transition">
+      Logout
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

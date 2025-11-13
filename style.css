@@ -1,0 +1,74 @@
+/* 🎬 Background video styling */
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+body {
+  background: linear-gradient(270deg, #a5b4fc, #c084fc, #93c5fd);
+  background-size: 600% 600%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* 🌈 Animasi gradasi (opsional jika ingin background ganda) */
+/* body { */
+/*   background: linear-gradient(270deg, #a5b4fc, #c084fc, #93c5fd); */
+/*   background-size: 600% 600%; */
+/*   animation: gradientShift 10s ease infinite; */
+/* } */
+
+/* @keyframes gradientShift { */
+/*   0% { background-position: 0% 50%; } */
+/*   50% { background-position: 100% 50%; } */
+/*   100% { background-position: 0% 50%; } */
+/* } */
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 💥 POPUP ANIMATION */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  animation: popupAnim 0.5s ease;
+}
+
+@keyframes popupAnim {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hidden {
+  display: none;
+}
